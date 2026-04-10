@@ -7,14 +7,14 @@ const springHover = { type: "spring" as const, stiffness: 400, damping: 25 };
 
 const featuredGradients = [
   'from-primary-500/20 via-primary-600/10 to-transparent',
-  'from-cyan-500/20 via-blue-600/10 to-transparent',
-  'from-accent-500/20 via-orange-600/10 to-transparent',
+  'from-primary-300/20 via-primary-400/10 to-transparent',
+  'from-accent-500/20 via-accent-600/10 to-transparent',
 ];
 
 const featuredAccents = [
-  'from-primary-500 to-emerald-400',
-  'from-cyan-400 to-blue-500',
-  'from-accent-400 to-orange-500',
+  'from-primary-500 to-primary-300',
+  'from-primary-300 to-primary-600',
+  'from-accent-400 to-accent-600',
 ];
 
 export default function Projects() {

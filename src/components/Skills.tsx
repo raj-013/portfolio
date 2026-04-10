@@ -5,12 +5,12 @@ import { resumeData } from '../data/resume';
 const springHover = { type: "spring" as const, stiffness: 400, damping: 25 };
 
 const categoryColors: Record<string, string> = {
-  'Languages': 'bg-sky-500/15 text-sky-300 border-sky-500/20',
-  'ML & AI': 'bg-primary-500/15 text-primary-300 border-primary-500/20',
-  'Data & Libraries': 'bg-cyan-500/15 text-cyan-300 border-cyan-500/20',
-  'Databases': 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
-  'Cloud & DevOps': 'bg-accent-500/15 text-accent-300 border-accent-500/20',
-  'Tools': 'bg-rose-500/15 text-rose-300 border-rose-500/20',
+  'Languages': 'bg-primary-500/15 text-primary-300 border-primary-500/20',
+  'ML & AI': 'bg-primary-400/15 text-primary-200 border-primary-400/20',
+  'Data & Libraries': 'bg-primary-600/15 text-primary-300 border-primary-600/20',
+  'Databases': 'bg-accent-500/15 text-accent-300 border-accent-500/20',
+  'Cloud & DevOps': 'bg-accent-400/15 text-accent-200 border-accent-400/20',
+  'Tools': 'bg-surface-500/15 text-surface-300 border-surface-500/20',
 };
 
 const categoryIcons: Record<string, string> = {

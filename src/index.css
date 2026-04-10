@@ -12,7 +12,7 @@
   html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: #0d9488 #0f172a;
+    scrollbar-color: #09637E #0f172a;
   }
 
   body {
@@ -39,7 +39,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-emerald-300 to-accent-400;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-300 via-primary-50 to-accent-400;
   }
 
   .glass-card {
@@ -74,12 +74,12 @@
 @layer utilities {
   .bg-grid-pattern {
     background-image:
-      linear-gradient(rgba(20, 184, 166, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(20, 184, 166, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(8, 131, 149, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(8, 131, 149, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
   .bg-radial-fade {
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(20, 184, 166, 0.10), transparent);
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(8, 131, 149, 0.10), transparent);
   }
 }

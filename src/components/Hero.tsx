@@ -36,7 +36,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.2 }}
           className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-500/10 border border-primary-500/20 mb-8"
         >
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+          <span className="w-2 h-2 rounded-full bg-primary-300 animate-pulse" />
           <span className="text-sm text-primary-300 font-medium">Currently at Emotionall</span>
         </motion.div>
 
