@@ -12,7 +12,7 @@
   html {
     scroll-behavior: smooth;
     scrollbar-width: thin;
-    scrollbar-color: #4f46e5 #0f172a;
+    scrollbar-color: #0d9488 #0f172a;
   }
 
   body {
@@ -39,7 +39,7 @@
 
 @layer components {
   .gradient-text {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-purple-400 to-primary-300;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary-400 via-emerald-300 to-accent-400;
   }
 
   .glass-card {
@@ -47,7 +47,7 @@
   }
 
   .glass-card-hover {
-    @apply glass-card transition-all duration-500 hover:border-primary-500/30 hover:bg-surface-800/50 hover:shadow-lg hover:shadow-primary-500/5;
+    @apply glass-card transition-all duration-150 hover:border-primary-500/30 hover:bg-surface-800/50 hover:shadow-lg hover:shadow-primary-500/5;
   }
 
   .section-container {
@@ -74,12 +74,12 @@
 @layer utilities {
   .bg-grid-pattern {
     background-image:
-      linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+      linear-gradient(rgba(20, 184, 166, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(20, 184, 166, 0.03) 1px, transparent 1px);
     background-size: 60px 60px;
   }
 
   .bg-radial-fade {
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(99, 102, 241, 0.12), transparent);
+    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(20, 184, 166, 0.10), transparent);
   }
 }

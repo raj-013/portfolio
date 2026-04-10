@@ -3,6 +3,8 @@ import { HiOutlineBriefcase, HiOutlineLocationMarker } from 'react-icons/hi';
 import AnimatedSection from './AnimatedSection';
 import { resumeData } from '../data/resume';
 
+const springHover = { type: "spring" as const, stiffness: 400, damping: 25 };
+
 export default function Experience() {
   return (
     <section id="experience" className="section-padding relative">
@@ -19,17 +21,16 @@ export default function Experience() {
         </AnimatedSection>
 
         <div className="relative">
-          {/* Timeline line */}
           <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary-500 via-primary-500/50 to-transparent hidden sm:block" />
 
           <div className="space-y-8">
             {resumeData.experience.map((exp, index) => (
               <AnimatedSection key={exp.company} delay={index * 0.15}>
                 <div className="flex gap-6">
-                  {/* Timeline dot */}
                   <div className="hidden sm:flex flex-col items-center">
                     <motion.div
                       whileHover={{ scale: 1.3 }}
+                      transition={springHover}
                       className={`w-10 h-10 rounded-full flex items-center justify-center shrink-0 ${
                         index === 0
                           ? 'bg-primary-500 shadow-lg shadow-primary-500/30'
@@ -40,10 +41,9 @@ export default function Experience() {
                     </motion.div>
                   </div>
 
-                  {/* Content card */}
                   <motion.div
                     whileHover={{ x: 4 }}
-                    transition={{ duration: 0.3 }}
+                    transition={springHover}
                     className="flex-1 glass-card-hover p-6 sm:p-8"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-4">

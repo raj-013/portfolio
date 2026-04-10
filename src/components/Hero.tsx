@@ -15,30 +15,21 @@ export default function Hero() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background effects */}
       <div className="absolute inset-0 bg-grid-pattern" />
       <div className="absolute inset-0 bg-radial-fade" />
 
-      {/* Floating orbs */}
       <motion.div
-        animate={{
-          x: [0, 30, -20, 0],
-          y: [0, -40, 20, 0],
-        }}
+        animate={{ x: [0, 30, -20, 0], y: [0, -40, 20, 0] }}
         transition={{ duration: 20, repeat: Infinity, ease: 'linear' }}
         className="absolute top-1/4 left-1/4 w-72 h-72 bg-primary-500/10 rounded-full blur-3xl"
       />
       <motion.div
-        animate={{
-          x: [0, -30, 20, 0],
-          y: [0, 30, -40, 0],
-        }}
+        animate={{ x: [0, -30, 20, 0], y: [0, 30, -40, 0] }}
         transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/8 rounded-full blur-3xl"
+        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-500/5 rounded-full blur-3xl"
       />
 
       <div className="relative z-10 section-container text-center">
-        {/* Status badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -49,7 +40,6 @@ export default function Hero() {
           <span className="text-sm text-primary-300 font-medium">Currently at Emotionall</span>
         </motion.div>
 
-        {/* Name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -60,7 +50,6 @@ export default function Hero() {
           <span className="gradient-text">Patel</span>
         </motion.h1>
 
-        {/* Animated role */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -81,7 +70,6 @@ export default function Hero() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Subtitle */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -90,11 +78,10 @@ export default function Hero() {
         >
           NYU Tandon M.S. graduate building intelligent systems with{' '}
           <span className="text-primary-400">LLMs</span>,{' '}
-          <span className="text-purple-400">RAG pipelines</span>, and{' '}
+          <span className="text-accent-400">RAG pipelines</span>, and{' '}
           <span className="text-primary-400">scalable cloud infrastructure</span>.
         </motion.p>
 
-        {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -103,20 +90,19 @@ export default function Hero() {
         >
           <a
             href="#experience"
-            className="group relative px-8 py-3.5 rounded-xl bg-primary-600 text-white font-medium overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/25"
+            className="group relative px-8 py-3.5 rounded-xl bg-primary-600 text-white font-medium overflow-hidden transition-all duration-150 hover:shadow-lg hover:shadow-primary-500/25"
           >
             <span className="relative z-10">View My Work</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
           </a>
           <a
             href="#contact"
-            className="px-8 py-3.5 rounded-xl border border-surface-700 text-surface-300 font-medium hover:border-primary-500/50 hover:text-white transition-all duration-300"
+            className="px-8 py-3.5 rounded-xl border border-surface-700 text-surface-300 font-medium hover:border-primary-500/50 hover:text-white transition-all duration-150"
           >
             Get In Touch
           </a>
         </motion.div>
 
-        {/* Quick stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -125,8 +111,8 @@ export default function Hero() {
         >
           {[
             { value: '3+', label: 'Years Experience' },
-            { value: '3.93', label: 'GPA at NYU' },
-            { value: '3', label: 'ML Projects' },
+            { value: '7', label: 'Projects Built' },
+            { value: '3', label: 'Companies' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</div>
@@ -136,7 +122,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
       <motion.a
         href="#about"
         initial={{ opacity: 0 }}
@@ -147,7 +132,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="text-surface-600 hover:text-primary-400 transition-colors"
+          className="text-surface-600 hover:text-primary-400 transition-colors duration-150"
         >
           <HiOutlineChevronDown size={28} />
         </motion.div>

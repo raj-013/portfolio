@@ -2,12 +2,14 @@ import { motion } from 'framer-motion';
 import AnimatedSection from './AnimatedSection';
 import { resumeData } from '../data/resume';
 
+const springHover = { type: "spring" as const, stiffness: 400, damping: 25 };
+
 const categoryColors: Record<string, string> = {
-  'Languages': 'bg-blue-500/15 text-blue-300 border-blue-500/20',
-  'ML & AI': 'bg-purple-500/15 text-purple-300 border-purple-500/20',
+  'Languages': 'bg-sky-500/15 text-sky-300 border-sky-500/20',
+  'ML & AI': 'bg-primary-500/15 text-primary-300 border-primary-500/20',
   'Data & Libraries': 'bg-cyan-500/15 text-cyan-300 border-cyan-500/20',
   'Databases': 'bg-emerald-500/15 text-emerald-300 border-emerald-500/20',
-  'Cloud & DevOps': 'bg-orange-500/15 text-orange-300 border-orange-500/20',
+  'Cloud & DevOps': 'bg-accent-500/15 text-accent-300 border-accent-500/20',
   'Tools': 'bg-rose-500/15 text-rose-300 border-rose-500/20',
 };
 
@@ -40,7 +42,7 @@ export default function Skills() {
             <AnimatedSection key={category.category} delay={index * 0.1}>
               <motion.div
                 whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
+                transition={springHover}
                 className="glass-card-hover p-6 h-full"
               >
                 <div className="flex items-center gap-3 mb-5">
