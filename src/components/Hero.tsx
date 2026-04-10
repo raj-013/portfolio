@@ -62,7 +62,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20, filter: 'blur(10px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               exit={{ opacity: 0, y: -20, filter: 'blur(10px)' }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.3 }}
               className="text-xl sm:text-2xl md:text-3xl font-medium text-surface-300 font-mono"
             >
               {resumeData.roles[roleIndex]}

@@ -51,7 +51,7 @@ export default function Navbar() {
                   href={link.href}
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 * i, duration: 0.4 }}
+                  transition={{ delay: 0.05 * i, duration: 0.25 }}
                   className="px-4 py-2 text-sm text-surface-400 hover:text-white transition-colors duration-150 relative group"
                 >
                   {link.label}
