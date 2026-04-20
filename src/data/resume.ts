@@ -122,6 +122,23 @@ export const resumeData: ResumeData = {
   ],
   projects: [
     {
+      name: "ContextForge — LLM Context Analytics Platform",
+      tech: ["FastAPI", "DuckDB", "Celery", "OpenAI", "Next.js", "Docker"],
+      period: "Jan 2026 – Apr 2026",
+      link: "https://github.com/raj-013/ContextForge",
+      featured: true,
+      metrics: [
+        { value: "30%", label: "Token Reduction" },
+        { value: "100+", label: "Context Variants" },
+      ],
+      bullets: [
+        "Built a self-hosted LLM context analytics platform (69 modules, 216 tests) to measure Quality-Per-Token (QPT), reducing unnecessary token usage by 20–30%.",
+        "Developed a FastAPI backend with PostgreSQL metadata storage, DuckDB analytics, MinIO/Parquet trace storage, and Celery workers for async experiment execution.",
+        "Implemented a Next.js dashboard, Python CLI, LangChain callback handler, and OpenAI SDK wrapper to ingest traces, analyze token cost and waste, and compare context strategies end-to-end.",
+        "Added experiment evaluation and GitHub regression gating to measure QPT, enabling before/after comparison of context policies on benchmark workflows.",
+      ],
+    },
+    {
       name: "LLM-Powered RAG Chatbot",
       tech: ["LLMs", "RAG", "LangChain", "GPT", "Java"],
       period: "Sep 2024 – Dec 2024",
@@ -158,7 +175,7 @@ export const resumeData: ResumeData = {
       tech: ["LSTM", "PySpark", "Apache Kafka"],
       period: "Jan 2024 – May 2024",
       link: "https://github.com/raj-013/Predictive-Maintenance-for-Wind-Turbines",
-      featured: true,
+      featured: false,
       metrics: [
         { value: "92%", label: "Detection Accuracy" },
         { value: "50%", label: "Downtime Reduced" },
@@ -211,7 +228,7 @@ export const resumeData: ResumeData = {
   skills: [
     {
       category: "Languages",
-      skills: ["Python", "Java"],
+      skills: ["Python", "Java", "TypeScript"],
     },
     {
       category: "ML & AI",
@@ -236,6 +253,8 @@ export const resumeData: ResumeData = {
         "PySpark",
         "Apache Kafka",
         "Elasticsearch",
+        "DuckDB",
+        "OpenSearch",
       ],
     },
     {
@@ -265,6 +284,10 @@ export const resumeData: ResumeData = {
         "Grafana",
         "JIRA",
       ],
+    },
+    {
+      category: "Backend & APIs",
+      skills: ["FastAPI", "Django", "REST APIs", "Celery"],
     },
   ],
   certifications: [
