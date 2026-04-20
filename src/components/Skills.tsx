@@ -11,6 +11,7 @@ const categoryColors: Record<string, string> = {
   'Databases': 'bg-accent-500/15 text-accent-300 border-accent-500/20',
   'Cloud & DevOps': 'bg-accent-400/15 text-accent-200 border-accent-400/20',
   'Tools': 'bg-surface-500/15 text-surface-300 border-surface-500/20',
+  'Backend & APIs': 'bg-primary-500/15 text-primary-300 border-primary-500/20',
 };
 
 const categoryIcons: Record<string, string> = {
@@ -20,6 +21,7 @@ const categoryIcons: Record<string, string> = {
   'Databases': '🗄️',
   'Cloud & DevOps': '☁️',
   'Tools': '🔧',
+  'Backend & APIs': '⚡',
 };
 
 export default function Skills() {
