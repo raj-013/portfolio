@@ -5,16 +5,34 @@ import { resumeData } from '../data/resume';
 
 const springHover = { type: "spring" as const, stiffness: 400, damping: 25 };
 
-const featuredGradients = [
-  'from-primary-500/20 via-primary-600/10 to-transparent',
-  'from-primary-300/20 via-primary-400/10 to-transparent',
-  'from-accent-500/20 via-accent-600/10 to-transparent',
-];
-
-const featuredAccents = [
-  'from-primary-500 to-primary-300',
-  'from-primary-300 to-primary-600',
-  'from-accent-400 to-accent-600',
+const featuredThemes = [
+  {
+    // ContextForge — Teal
+    hoverBorder: 'hover:border-[#088395]/40',
+    headerBg: 'bg-[#088395]/10',
+    bar: 'from-[#088395] to-[#7AB2B2]',
+    metricText: 'text-[#7AB2B2]',
+    tagBg: 'bg-[#088395]/10 text-[#7AB2B2] border-[#088395]/25',
+    dot: 'bg-[#088395]/70',
+  },
+  {
+    // RAG Chatbot — Amber
+    hoverBorder: 'hover:border-[#E5A44E]/35',
+    headerBg: 'bg-[#E5A44E]/10',
+    bar: 'from-[#E5A44E] to-[#EFBF7A]',
+    metricText: 'text-[#EFBF7A]',
+    tagBg: 'bg-[#E5A44E]/10 text-[#EFBF7A] border-[#E5A44E]/25',
+    dot: 'bg-[#E5A44E]/70',
+  },
+  {
+    // Fine-Tuning — Violet
+    hoverBorder: 'hover:border-[#8B5CF6]/35',
+    headerBg: 'bg-[#8B5CF6]/10',
+    bar: 'from-[#8B5CF6] to-[#C4B5FD]',
+    metricText: 'text-[#C4B5FD]',
+    tagBg: 'bg-[#8B5CF6]/10 text-[#C4B5FD] border-[#8B5CF6]/25',
+    dot: 'bg-[#8B5CF6]/70',
+  },
 ];
 
 export default function Projects() {
@@ -38,19 +56,28 @@ export default function Projects() {
 
         {/* Featured projects — larger cards */}
         <div className="grid lg:grid-cols-3 gap-6 mb-16">
-          {featured.map((project, index) => (
-            <AnimatedSection key={project.name} delay={index * 0.12}>
-              <motion.div
-                whileHover={{ y: -6 }}
-                transition={springHover}
-                className="group glass-card h-full flex flex-col overflow-hidden border border-surface-700/50 hover:border-primary-500/40 transition-colors duration-150 rounded-2xl"
-              >
+          {featured.map((project, index) => {
+            const theme = featuredThemes[index] ?? featuredThemes[0];
+            return (
+              <AnimatedSection key={project.name} delay={index * 0.12}>
+                <motion.div
+                  whileHover={{ y: -6 }}
+                  transition={springHover}
+                  className={`group glass-card h-full flex flex-col overflow-hidden border border-surface-700/50 ${theme.hoverBorder} transition-colors duration-150 rounded-2xl`}
+                >
                 {/* Gradient header */}
-                <div className={`relative h-32 bg-gradient-to-br ${featuredGradients[index]} p-6 flex flex-col justify-between`}>
+                <div className={`relative h-32 ${theme.headerBg} p-6 flex flex-col justify-between`}>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-surface-400 font-mono bg-surface-900/60 backdrop-blur-sm px-2.5 py-1 rounded-md">
-                      {project.period}
-                    </span>
+                    <div className="flex items-center gap-2">
+                      <span className="text-xs text-surface-400 font-mono bg-surface-900/60 backdrop-blur-sm px-2.5 py-1 rounded-md">
+                        {project.period}
+                      </span>
+                      {index === 0 && (
+                        <span className="inline-flex items-center gap-1 text-[10px] font-semibold uppercase tracking-wide px-2 py-0.5 rounded-full bg-[#088395]/15 border border-[#088395]/35 text-[#7AB2B2] font-mono">
+                          ✦ New
+                        </span>
+                      )}
+                    </div>
                     {project.link && (
                       <a
                         href={project.link}
@@ -65,7 +92,7 @@ export default function Projects() {
                       </a>
                     )}
                   </div>
-                  <div className={`absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r ${featuredAccents[index]} opacity-60 group-hover:opacity-100 transition-opacity duration-150`} />
+                  <div className={`absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r ${theme.bar} opacity-60 group-hover:opacity-100 transition-opacity duration-150`} />
                 </div>
 
                 <div className="p-6 flex flex-col flex-1">
@@ -78,7 +105,7 @@ export default function Projects() {
                     <div className="flex gap-3 mb-5">
                       {project.metrics.map((m) => (
                         <div key={m.label} className="flex-1 bg-surface-800/60 border border-surface-700/40 rounded-xl p-3 text-center">
-                          <div className="text-lg font-bold text-primary-400">{m.value}</div>
+                          <div className={`text-lg font-bold ${theme.metricText}`}>{m.value}</div>
                           <div className="text-[10px] text-surface-500 uppercase tracking-wider mt-0.5">{m.label}</div>
                         </div>
                       ))}
@@ -89,7 +116,7 @@ export default function Projects() {
                   <ul className="space-y-2.5 mb-5 flex-1">
                     {project.bullets.slice(0, 2).map((bullet, i) => (
                       <li key={i} className="flex gap-2.5 text-surface-400 text-sm leading-relaxed">
-                        <span className="w-1 h-1 rounded-full bg-primary-500/50 mt-2 shrink-0" />
+                        <span className={`w-1 h-1 rounded-full ${theme.dot} mt-2 shrink-0`} />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -100,7 +127,7 @@ export default function Projects() {
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-xs font-mono px-2.5 py-1 rounded-md bg-primary-500/10 text-primary-300 border border-primary-500/15"
+                        className={`text-xs font-mono px-2.5 py-1 rounded-md border ${theme.tagBg}`}
                       >
                         {t}
                       </span>
@@ -109,7 +136,8 @@ export default function Projects() {
                 </div>
               </motion.div>
             </AnimatedSection>
-          ))}
+          );
+          })}
         </div>
 
         {/* Additional projects */}
