@@ -15,7 +15,7 @@ export default function About() {
           </div>
           <h2 className="section-title text-white">
             Building intelligent systems<br />
-            <span className="gradient-text">at the intersection of ML &amp; Software Engineering</span>
+            <span className="text-primary-300">at the intersection of ML &amp; Software Engineering</span>
           </h2>
         </AnimatedSection>
 
@@ -31,7 +31,9 @@ export default function About() {
               <p>
                 Currently at <span className="text-white font-medium">Emotionall</span> as Lead ML Engineer,
                 I build and deploy production AI systems — from GPU-accelerated inference services
-                to evaluation pipelines that ensure reliable model behavior. I'm passionate about
+                to evaluation pipelines that ensure reliable model behavior. Most recently I built{' '}
+                <span className="text-white font-medium">ContextForge</span>, an LLM context analytics
+                platform for measuring token efficiency in production RAG systems. I'm passionate about
                 bridging the gap between ML research and production-ready software.
               </p>
             </div>
