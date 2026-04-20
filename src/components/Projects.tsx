@@ -12,6 +12,8 @@ const featuredThemes = [
     headerBg: 'bg-[#088395]/10',
     bar: 'from-[#088395] to-[#7AB2B2]',
     metricText: 'text-[#7AB2B2]',
+    hoverText: 'hover:text-[#7AB2B2]',
+    groupHoverText: 'group-hover:text-[#7AB2B2]',
     tagBg: 'bg-[#088395]/10 text-[#7AB2B2] border-[#088395]/25',
     dot: 'bg-[#088395]/70',
   },
@@ -21,6 +23,8 @@ const featuredThemes = [
     headerBg: 'bg-[#E5A44E]/10',
     bar: 'from-[#E5A44E] to-[#EFBF7A]',
     metricText: 'text-[#EFBF7A]',
+    hoverText: 'hover:text-[#EFBF7A]',
+    groupHoverText: 'group-hover:text-[#EFBF7A]',
     tagBg: 'bg-[#E5A44E]/10 text-[#EFBF7A] border-[#E5A44E]/25',
     dot: 'bg-[#E5A44E]/70',
   },
@@ -30,6 +34,8 @@ const featuredThemes = [
     headerBg: 'bg-[#8B5CF6]/10',
     bar: 'from-[#8B5CF6] to-[#C4B5FD]',
     metricText: 'text-[#C4B5FD]',
+    hoverText: 'hover:text-[#C4B5FD]',
+    groupHoverText: 'group-hover:text-[#C4B5FD]',
     tagBg: 'bg-[#8B5CF6]/10 text-[#C4B5FD] border-[#8B5CF6]/25',
     dot: 'bg-[#8B5CF6]/70',
   },
@@ -65,7 +71,7 @@ export default function Projects() {
                   transition={springHover}
                   className={`group glass-card h-full flex flex-col overflow-hidden border border-surface-700/50 ${theme.hoverBorder} transition-colors duration-150 rounded-2xl`}
                 >
-                {/* Gradient header */}
+                {/* Card header — flat theme-colored background */}
                 <div className={`relative h-32 ${theme.headerBg} p-6 flex flex-col justify-between`}>
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
@@ -83,7 +89,7 @@ export default function Projects() {
                         href={project.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-1.5 text-xs font-medium text-surface-300 hover:text-primary-400 bg-surface-900/60 backdrop-blur-sm px-3 py-1.5 rounded-lg transition-colors duration-150"
+                        className={`flex items-center gap-1.5 text-xs font-medium text-surface-300 ${theme.hoverText} bg-surface-900/60 backdrop-blur-sm px-3 py-1.5 rounded-lg transition-colors duration-150`}
                         onClick={(e) => e.stopPropagation()}
                       >
                         <FiGithub className="w-3.5 h-3.5" />
@@ -96,7 +102,7 @@ export default function Projects() {
                 </div>
 
                 <div className="p-6 flex flex-col flex-1">
-                  <h3 className="text-lg font-bold text-white group-hover:text-primary-400 transition-colors duration-150 mb-4">
+                  <h3 className={`text-lg font-bold text-white ${theme.groupHoverText} transition-colors duration-150 mb-4`}>
                     {project.name}
                   </h3>
 

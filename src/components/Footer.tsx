@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="section-container">
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <span className="text-lg font-bold gradient-text">RP</span>
+            <span className="text-lg font-bold text-primary-400">RP</span>
             <span className="text-surface-600 text-sm">|</span>
             <span className="text-surface-500 text-sm">{resumeData.name}</span>
           </div>
