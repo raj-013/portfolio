@@ -47,7 +47,7 @@ export default function Hero() {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight mb-6"
         >
           <span className="text-white">Raj</span>{' '}
-          <span className="gradient-text">Patel</span>
+          <span className="text-primary-500">Patel</span>
         </motion.h1>
 
         <motion.div
@@ -111,7 +111,7 @@ export default function Hero() {
         >
           {[
             { value: '3+', label: 'Years Experience' },
-            { value: '7', label: 'Projects Built' },
+            { value: '8', label: 'Projects Built' },
             { value: '3', label: 'Companies' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
