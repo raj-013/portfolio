@@ -42,10 +42,10 @@ export default function About() {
           <AnimatedSection delay={0.4}>
             <div className="grid grid-cols-2 gap-4">
               {[
-                { icon: '🧠', title: 'ML & AI', desc: 'LLMs, RAG, NLP, Deep Learning' },
-                { icon: '⚙️', title: 'Backend', desc: 'Python, Java, Django, APIs' },
-                { icon: '☁️', title: 'Cloud & DevOps', desc: 'AWS, Docker, Kubernetes, CI/CD' },
-                { icon: '📊', title: 'Data Engineering', desc: 'Kafka, PySpark, PostgreSQL' },
+                { icon: '🧠', title: 'ML & AI', desc: 'LLMs, RAG, NLP, Deep Learning', bar: 'bg-primary-500' },
+                { icon: '⚙️', title: 'Backend', desc: 'Python, Java, Django, APIs', bar: 'bg-accent-500' },
+                { icon: '☁️', title: 'Cloud & DevOps', desc: 'AWS, Docker, Kubernetes, CI/CD', bar: 'bg-[#8B5CF6]' },
+                { icon: '📊', title: 'Data Engineering', desc: 'Kafka, PySpark, PostgreSQL', bar: 'bg-[#06B6D4]' },
               ].map((item) => (
                 <motion.div
                   key={item.title}
@@ -56,7 +56,7 @@ export default function About() {
                   <div className="text-2xl mb-3" aria-hidden="true">{item.icon}</div>
                   <h3 className="text-white font-semibold text-sm mb-1">{item.title}</h3>
                   <p className="text-surface-400 text-xs leading-relaxed">{item.desc}</p>
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-primary-500 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-150 rounded-b-2xl" />
+                  <div className={`absolute bottom-0 left-0 right-0 h-[2px] ${item.bar} opacity-0 group-hover:opacity-100 transition-opacity duration-150 rounded-b-2xl`} />
                 </motion.div>
               ))}
             </div>

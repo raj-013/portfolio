@@ -93,7 +93,7 @@ export default function Hero() {
             className="group relative px-8 py-3.5 rounded-xl bg-primary-600 text-white font-medium overflow-hidden transition-all duration-150 hover:shadow-lg hover:shadow-primary-500/25"
           >
             <span className="relative z-10">View My Work</span>
-            <div className="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
+            <div className="absolute inset-0 bg-primary-400 opacity-0 group-hover:opacity-100 transition-opacity duration-150" />
           </a>
           <a
             href="#contact"

@@ -21,7 +21,7 @@ export default function Experience() {
         </AnimatedSection>
 
         <div className="relative">
-          <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-primary-500 via-primary-500/50 to-transparent hidden sm:block" />
+          <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-primary-500/30 hidden sm:block" />
 
           <div className="space-y-8">
             {resumeData.experience.map((exp, index) => (

@@ -6,6 +6,11 @@ import { resumeData } from '../data/resume';
 
 const springHover = { type: "spring" as const, stiffness: 400, damping: 25 };
 
+const eduThemes = [
+  { bar: 'from-[#088395] to-[#7AB2B2]' },   // NYU — teal
+  { bar: 'from-[#8B5CF6] to-[#C4B5FD]' },   // NMIMS — violet
+];
+
 export default function Education() {
   return (
     <section id="education" className="section-padding relative">
@@ -23,14 +28,16 @@ export default function Education() {
         </AnimatedSection>
 
         <div className="grid md:grid-cols-2 gap-6">
-          {resumeData.education.map((edu, index) => (
+          {resumeData.education.map((edu, index) => {
+            const theme = eduThemes[index] ?? eduThemes[0];
+            return (
             <AnimatedSection key={edu.school} delay={index * 0.15}>
               <motion.div
                 whileHover={{ y: -6 }}
                 transition={springHover}
                 className="glass-card-hover p-6 sm:p-8 h-full relative overflow-hidden group"
               >
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-accent-500 opacity-60 group-hover:opacity-100 transition-opacity duration-150" />
+                <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${theme.bar} opacity-60 group-hover:opacity-100 transition-opacity duration-150`} />
 
                 <div className="flex items-start gap-4 mb-4">
                   <div className="w-12 h-12 rounded-xl bg-primary-500/10 border border-primary-500/20 flex items-center justify-center shrink-0">
@@ -67,7 +74,8 @@ export default function Education() {
                 )}
               </motion.div>
             </AnimatedSection>
-          ))}
+            );
+          })}
         </div>
 
         {/* Certifications */}
