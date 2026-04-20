@@ -31,3 +31,6 @@ Thumbs.db
 .roo/
 .trae/
 .windsurf/
+
+# Brainstorm session files
+.superpowers/
