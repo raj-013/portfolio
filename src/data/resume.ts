@@ -128,7 +128,7 @@ export const resumeData: ResumeData = {
       link: "https://github.com/raj-013/ContextForge",
       featured: true,
       metrics: [
-        { value: "30%", label: "Token Reduction" },
+        { value: "20–30%", label: "Token Reduction" },
         { value: "100+", label: "Context Variants" },
       ],
       bullets: [
