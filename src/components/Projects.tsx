@@ -95,23 +95,37 @@ export default function Projects() {
                         </span>
                       )}
                     </div>
-                    {project.link && (
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`flex items-center gap-1.5 text-xs font-medium text-surface-300 ${theme.hoverText} bg-surface-900/60 backdrop-blur-sm px-3 py-1.5 rounded-lg transition-colors duration-150`}
-                        onClick={(e) => e.stopPropagation()}
-                      >
-                        {project.link.includes('github.com') ? (
-                          <FiGithub className="w-3.5 h-3.5" />
-                        ) : (
+                    <div className="flex items-center gap-2">
+                      {project.demoLink && (
+                        <a
+                          href={project.demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex items-center gap-1.5 text-xs font-medium text-surface-300 ${theme.hoverText} bg-surface-900/60 backdrop-blur-sm px-3 py-1.5 rounded-lg transition-colors duration-150`}
+                          onClick={(e) => e.stopPropagation()}
+                        >
                           <FiArrowUpRight className="w-3.5 h-3.5" />
-                        )}
-                        <span>{project.link.includes('github.com') ? 'Source' : 'Live'}</span>
-                        <FiArrowUpRight className="w-3 h-3" />
-                      </a>
-                    )}
+                          <span>Demo</span>
+                        </a>
+                      )}
+                      {project.link && (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`flex items-center gap-1.5 text-xs font-medium text-surface-300 ${theme.hoverText} bg-surface-900/60 backdrop-blur-sm px-3 py-1.5 rounded-lg transition-colors duration-150`}
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          {project.link.includes('github.com') ? (
+                            <FiGithub className="w-3.5 h-3.5" />
+                          ) : (
+                            <FiArrowUpRight className="w-3.5 h-3.5" />
+                          )}
+                          <span>{project.link.includes('github.com') ? 'Source' : 'Live'}</span>
+                          <FiArrowUpRight className="w-3 h-3" />
+                        </a>
+                      )}
+                    </div>
                   </div>
                   <div className={`absolute bottom-0 left-0 right-0 h-[3px] bg-gradient-to-r ${theme.bar} opacity-60 group-hover:opacity-100 transition-opacity duration-150`} />
                 </div>

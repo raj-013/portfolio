@@ -25,6 +25,7 @@ export interface Project {
   period: string;
   bullets: string[];
   link?: string;
+  demoLink?: string;
   featured?: boolean;
   metrics?: ProjectMetric[];
 }
@@ -138,6 +139,7 @@ export const resumeData: ResumeData = {
       tech: ["FastAPI", "DuckDB", "Celery", "OpenAI", "Next.js", "Docker"],
       period: "Jan 2026 – Apr 2026",
       link: "https://github.com/raj-013/ContextForge",
+      demoLink: "https://raj-013.github.io/contextforge-demo/",
       featured: true,
       metrics: [
         { value: "20–30%", label: "Token Reduction" },
