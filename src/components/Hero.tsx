@@ -110,14 +110,14 @@ export default function Hero() {
           className="flex flex-wrap items-center justify-center gap-8 sm:gap-12 mt-16 pt-8 border-t border-surface-800/50"
         >
           {[
-            { value: '3+', label: 'Years Experience' },
-            { value: '8', label: 'Projects Built' },
-            { value: '3', label: 'Companies' },
+            { value: '3+', label: 'Years Experience', href: '#experience' },
+            { value: '8', label: 'Projects Built', href: '#projects' },
+            { value: '3', label: 'Companies', href: '#experience' },
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl sm:text-3xl font-bold text-white">{stat.value}</div>
-              <div className="text-sm text-surface-500 mt-1">{stat.label}</div>
-            </div>
+            <a key={stat.label} href={stat.href} className="text-center group cursor-pointer">
+              <div className="text-2xl sm:text-3xl font-bold text-white group-hover:text-primary-400 transition-colors duration-150">{stat.value}</div>
+              <div className="text-sm text-surface-500 mt-1 group-hover:text-surface-300 transition-colors duration-150">{stat.label}</div>
+            </a>
           ))}
         </motion.div>
       </div>
