@@ -7,6 +7,17 @@ const springHover = { type: "spring" as const, stiffness: 400, damping: 25 };
 
 const featuredThemes = [
   {
+    // While 25 — Emerald
+    hoverBorder: 'hover:border-[#10B981]/40',
+    headerBg: 'bg-[#10B981]/10',
+    bar: 'from-[#10B981] to-[#6EE7B7]',
+    metricText: 'text-[#6EE7B7]',
+    hoverText: 'hover:text-[#6EE7B7]',
+    groupHoverText: 'group-hover:text-[#6EE7B7]',
+    tagBg: 'bg-[#10B981]/10 text-[#6EE7B7] border-[#10B981]/25',
+    dot: 'bg-[#10B981]/70',
+  },
+  {
     // ContextForge — Teal
     hoverBorder: 'hover:border-[#088395]/40',
     headerBg: 'bg-[#088395]/10',
@@ -61,7 +72,7 @@ export default function Projects() {
         </AnimatedSection>
 
         {/* Featured projects — larger cards */}
-        <div className="grid lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid sm:grid-cols-2 gap-6 mb-16">
           {featured.map((project, index) => {
             const theme = featuredThemes[index] ?? featuredThemes[0];
             return (
@@ -92,8 +103,12 @@ export default function Projects() {
                         className={`flex items-center gap-1.5 text-xs font-medium text-surface-300 ${theme.hoverText} bg-surface-900/60 backdrop-blur-sm px-3 py-1.5 rounded-lg transition-colors duration-150`}
                         onClick={(e) => e.stopPropagation()}
                       >
-                        <FiGithub className="w-3.5 h-3.5" />
-                        <span>Source</span>
+                        {project.link.includes('github.com') ? (
+                          <FiGithub className="w-3.5 h-3.5" />
+                        ) : (
+                          <FiArrowUpRight className="w-3.5 h-3.5" />
+                        )}
+                        <span>{project.link.includes('github.com') ? 'Source' : 'Live'}</span>
                         <FiArrowUpRight className="w-3 h-3" />
                       </a>
                     )}

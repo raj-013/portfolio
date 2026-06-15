@@ -122,6 +122,18 @@ export const resumeData: ResumeData = {
   ],
   projects: [
     {
+      name: "While 25 — AI-Native Trading Terminal",
+      tech: ["React", "Tauri", "TypeScript", "C++17", "WebSocket", "Protobuf", "LLM Agents"],
+      period: "Mar 2026 – Present",
+      link: "https://terminal.while25.com/",
+      featured: true,
+      bullets: [
+        "Built an AI-native trading terminal for Indian equity markets with real-time charts, indicators, portfolio/order workflows, strategy execution, backtesting, sandbox trading, and broker/data integrations.",
+        "Implemented a React/Tauri frontend, C++17 trading engine, Protobuf/WebSocket communication layer, and gateway services for scalable client-server trading workflows.",
+        "Designed LLM-agent workflows with typed terminal actions, secure cloud inference routing, confirmation gates, risk controls, and audit-friendly command execution for financial AI safety.",
+      ],
+    },
+    {
       name: "ContextForge — LLM Context Analytics Platform",
       tech: ["FastAPI", "DuckDB", "Celery", "OpenAI", "Next.js", "Docker"],
       period: "Jan 2026 – Apr 2026",
