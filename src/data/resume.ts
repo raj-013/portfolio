@@ -21,6 +21,7 @@ export interface ProjectMetric {
 
 export interface Project {
   name: string;
+  tagline?: string;
   tech: string[];
   period: string;
   bullets: string[];
@@ -45,7 +46,6 @@ export interface ResumeData {
   email: string;
   linkedinUrl: string;
   githubUrl: string;
-  roles: string[];
   education: Education[];
   experience: Experience[];
   projects: Project[];
@@ -58,11 +58,6 @@ export const resumeData: ResumeData = {
   email: "rajpatel@nyu.edu",
   linkedinUrl: "https://www.linkedin.com/in/rajpatel013/",
   githubUrl: "https://github.com/raj-013",
-  roles: [
-    "Machine Learning Engineer",
-    "Software Engineer",
-    "AI Systems Builder",
-  ],
   education: [
     {
       degree: "M.S. in Computer Engineering",
@@ -107,7 +102,7 @@ export const resumeData: ResumeData = {
         "Developed RESTful APIs using Python (Django) to support data ingestion, processing, and export workflows.",
         "Optimized PostgreSQL queries and backend services, improving API response time and data processing performance by 30%.",
         "Deployed containerized backend services using Docker and AWS ECS with CI/CD pipelines, improving system reliability and reducing service latency by 45%.",
-        "Worked with frontend and data teams to integrate APIs across platforms and ensure seamless data flow between services.",
+        "Worked with frontend and data teams to integrate APIs across platforms and keep data flowing between services.",
       ],
     },
     {
@@ -123,10 +118,9 @@ export const resumeData: ResumeData = {
   ],
   projects: [
     {
-      name: "While 25 — AI-Native Trading Terminal",
+      name: "AI-Native Trading Terminal",
       tech: ["React", "Tauri", "TypeScript", "C++17", "WebSocket", "Protobuf", "LLM Agents"],
       period: "Mar 2026 – Present",
-      link: "https://terminal.while25.com/",
       featured: true,
       bullets: [
         "Built an AI-native trading terminal for Indian equity markets with real-time charts, indicators, portfolio/order workflows, strategy execution, backtesting, sandbox trading, and broker/data integrations.",
@@ -135,7 +129,8 @@ export const resumeData: ResumeData = {
       ],
     },
     {
-      name: "ContextForge — LLM Context Analytics Platform",
+      name: "ContextForge",
+      tagline: "LLM context analytics platform",
       tech: ["FastAPI", "DuckDB", "Celery", "OpenAI", "Next.js", "Docker"],
       period: "Jan 2026 – Apr 2026",
       link: "https://github.com/raj-013/ContextForge",
@@ -180,7 +175,7 @@ export const resumeData: ResumeData = {
         { value: "1K+", label: "Reviews Processed" },
       ],
       bullets: [
-        "Fine-tuned T5, BART, and LLaMA models using Hugging Face Transformers on 1,000+ Amazon product reviews to generate high-quality abstractive summaries.",
+        "Fine-tuned T5, BART, and LLaMA models using Hugging Face Transformers on 1,000+ Amazon product reviews to generate abstractive summaries.",
         "Evaluated models using ROUGE-1, ROUGE-2, and ROUGE-L metrics, identifying T5 as the most balanced model with a ROUGE-1 score of 0.55.",
       ],
     },
@@ -206,7 +201,7 @@ export const resumeData: ResumeData = {
       link: "https://github.com/raj-013/Sign-Language-Recognition-System",
       bullets: [
         "Developed a real-time sign language recognition system using CNNs, comparing model performance across architectures to find the best model for SLR.",
-        "Tested skeleton data against existing models to evaluate accuracy for seamless communication between sign language and non-sign language users.",
+        "Tested skeleton data against existing models to evaluate accuracy for communication between sign language and non-sign language users.",
       ],
     },
     {

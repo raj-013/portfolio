@@ -1,138 +1,43 @@
-# Raj Patel — Portfolio
+# Raj Patel: portfolio
 
-A modern, animated personal portfolio website built with React, Tailwind CSS, and Framer Motion.
+Personal site. React, TypeScript, Vite and Tailwind. No animation or icon libraries.
 
-## 🚀 Quick Start
+## Run it
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
 npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
 ```
 
-## 📦 Deploy to GitHub Pages
+`npm run build` type-checks and writes the production build to `dist/`.
 
-### Option 1: Using gh-pages (Recommended)
+## Editing content
 
-1. Create a new GitHub repository (e.g., `rajpatel-portfolio` or `<username>.github.io`)
-2. Initialize git and push:
+Everything on the page comes from `src/data/resume.ts`, apart from the two intro paragraphs in
+`src/components/Intro.tsx` and the short note in `src/components/Contact.tsx`.
 
-```bash
-git init
-git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/<your-username>/<repo-name>.git
-git branch -M main
-git push -u origin main
-```
+A project with `featured: true` gets a full entry (tagline, metrics, first two bullets). The
+rest are listed under "All projects" with their first bullet only.
 
-3. Deploy to GitHub Pages:
+## Design
+
+- Colours are CSS variables in `src/index.css`, with a second set for `prefers-color-scheme: dark`.
+  Tailwind reads them as `paper`, `ink`, `muted`, `rule` and `accent`.
+- Type is Archivo (variable, using the width axis for the condensed headings) and IBM Plex Mono,
+  both self-hosted through Fontsource.
+- Each section is a stack of `Row`s from `src/components/Layout.tsx`: metadata in the left
+  column, content in the right.
+
+## Deploy to GitHub Pages
 
 ```bash
 npm run deploy
 ```
 
-This builds the project and pushes the `dist/` folder to the `gh-pages` branch.
+This builds the site and pushes `dist/` to the `gh-pages` branch. In the repository settings,
+set Pages to deploy from that branch. `vite.config.ts` uses `base: './'`, so it works from a
+project path such as `https://<username>.github.io/<repo>/` without changes.
 
-4. In your GitHub repo settings:
-   - Go to **Settings** → **Pages**
-   - Set source to **Deploy from a branch**
-   - Set branch to **gh-pages** and folder to **/ (root)**
-   - Click **Save**
-
-Your site will be live at `https://<your-username>.github.io/<repo-name>/`
-
-### Option 2: For `<username>.github.io` Repository
-
-If deploying to `<username>.github.io`, update `vite.config.ts`:
-
-```ts
-export default defineConfig({
-  plugins: [react()],
-  base: '/',  // Change from './' to '/'
-})
-```
-
-Then follow the same deploy steps above.
-
-## ✏️ Customization
-
-### Adding LinkedIn & GitHub URLs
-
-The resume PDFs only contained the text "LinkedIn" and "GitHub" without actual URLs. Update these in:
-
-- **`src/components/Contact.tsx`** — Update the `href="#"` values for LinkedIn and GitHub icons
-- **`src/data/resume.ts`** — Add `linkedinUrl` and `githubUrl` fields
-
-### Updating Resume Data
-
-All portfolio content is sourced from `src/data/resume.ts`. Edit this file to update any information.
-
-### Design Tokens
-
-The design system is defined in `tailwind.config.js`:
-- **Colors**: `primary` (indigo) and `surface` (slate) palettes
-- **Typography**: Inter (sans) + JetBrains Mono (mono)
-- **Animations**: Custom keyframes for gradient, float, and pulse effects
-
-## 🛠️ Tech Stack
-
-- **React 18** — UI framework
-- **TypeScript** — Type safety
-- **Vite** — Build tool
-- **Tailwind CSS** — Utility-first styling
-- **Framer Motion** — Animations and transitions
-- **React Icons** — Icon library
-
-## 📁 Project Structure
-
-```
-portfolio/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   ├── AnimatedSection.tsx   # Reusable scroll-reveal wrapper
-│   │   ├── Navbar.tsx            # Fixed navigation with mobile menu
-│   │   ├── Hero.tsx              # Landing section with role animation
-│   │   ├── About.tsx             # About section with focus cards
-│   │   ├── Experience.tsx        # Timeline-style work history
-│   │   ├── Projects.tsx          # Project cards with tech tags
-│   │   ├── Skills.tsx            # Categorized skill badges
-│   │   ├── Education.tsx         # Education cards with coursework
-│   │   ├── Contact.tsx           # Contact info and social links
-│   │   └── Footer.tsx            # Simple footer
-│   ├── data/
-│   │   └── resume.ts             # All portfolio data (single source of truth)
-│   ├── App.tsx
-│   ├── main.tsx
-│   └── index.css                 # Tailwind + custom utilities
-├── index.html
-├── tailwind.config.js
-├── vite.config.ts
-└── package.json
-```
-
-## ⚠️ Missing Information from PDFs
-
-The following could not be extracted from the resume PDFs:
-
-| Field | Status |
-|-------|--------|
-| LinkedIn URL | Only "LinkedIn" text found — no URL |
-| GitHub URL | Only "GitHub" text found — no URL |
-| Profile photo | Not available |
-| Personal summary | Synthesized from resume content |
-| Project GitHub repos | Not available |
-
-## 📄 License
+## License
 
 MIT

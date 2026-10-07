@@ -1,81 +1,90 @@
+@import '@fontsource-variable/archivo/wdth.css';
+@import '@fontsource/ibm-plex-mono/400.css';
+@import '@fontsource/ibm-plex-mono/500.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  :root {
+    --paper: #f3f0e8;
+    --ink: #15140f;
+    --muted: #5f5b50;
+    --rule: #cdc8b9;
+    --accent: #bf3414;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #11110f;
+      --ink: #eeebe3;
+      --muted: #a9a598;
+      --rule: #38362f;
+      --accent: #ff7a4d;
+    }
   }
 
   html {
     scroll-behavior: smooth;
-    scrollbar-width: thin;
-    scrollbar-color: #09637E #0f172a;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
   }
 
   body {
-    @apply bg-surface-950 text-surface-50 font-sans antialiased;
-    overflow-x: hidden;
-  }
-
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  ::-webkit-scrollbar-track {
-    @apply bg-surface-950;
-  }
-
-  ::-webkit-scrollbar-thumb {
-    @apply bg-primary-600 rounded-full;
+    @apply bg-paper text-ink font-sans antialiased;
+    font-size: 1.0625rem;
+    line-height: 1.6;
   }
 
   ::selection {
-    @apply bg-primary-500/30 text-white;
+    background: var(--accent);
+    color: var(--paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
   }
 }
 
 @layer components {
-  .glass-card {
-    @apply bg-surface-900/50 backdrop-blur-xl border border-surface-700/50 rounded-2xl;
+  .wrap {
+    @apply mx-auto max-w-6xl px-5 sm:px-8;
   }
 
-  .glass-card-hover {
-    @apply glass-card transition-all duration-150 hover:border-primary-500/30 hover:bg-surface-800/50 hover:shadow-lg hover:shadow-primary-500/5;
+  /* Condensed cut of Archivo, used for the name and section headings */
+  .display {
+    font-stretch: 62%;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 0.9;
   }
 
-  .section-container {
-    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
+  /* No transition on purpose: the hover state snaps */
+  .link {
+    text-decoration: underline;
+    text-decoration-color: var(--accent);
+    text-decoration-thickness: 2px;
+    text-underline-offset: 0.22em;
   }
 
-  .section-padding {
-    @apply py-20 sm:py-28 lg:py-32;
+  .link:hover {
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration-color: transparent;
   }
 
-  .section-title {
-    @apply text-3xl sm:text-4xl font-bold mb-3;
+  .bullets {
+    @apply space-y-2 pl-5;
+    list-style: square;
   }
 
-  .section-subtitle {
-    @apply text-surface-400 text-lg mb-12 max-w-2xl;
-  }
-
-  .glow-dot {
-    @apply absolute w-2 h-2 rounded-full bg-primary-500 shadow-lg shadow-primary-500/50;
-  }
-}
-
-@layer utilities {
-  .bg-grid-pattern {
-    background-image:
-      linear-gradient(rgba(8, 131, 149, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(8, 131, 149, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-  }
-
-  .bg-radial-fade {
-    background: radial-gradient(ellipse 80% 50% at 50% -20%, rgba(8, 131, 149, 0.10), transparent);
+  .bullets li::marker {
+    color: var(--muted);
   }
 }
